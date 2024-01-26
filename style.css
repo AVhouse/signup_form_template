@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('/assets/FireflyImage.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.form-container {
+    width: 50px;
+    margin-right: 0;
+    margin-left: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.signup-form {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.form-control label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-control input[type="text"],
+.form-control input[type="email"],
+.form-control input[type="password"],
+.form-control input[type="tel"] {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+.form-control input[type="Submit"]:hover {
+    background: #218838;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 20px;
+}
