@@ -1,1 +1,1 @@
-## Template to teach basic form design
+## Template of basic form design
