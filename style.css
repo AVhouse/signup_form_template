@@ -1,53 +1,235 @@
+@font-face {
+    font-family: "NorseBold";
+    src: url("./assets/Norse-Bold.otf");
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+   padding-bottom: 1em;
+   font-size: 1.5rem;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: url('/assets/FireflyImage.jpg') no-repeat center center fixed;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.banner {
+    flex: 3;
+    background-image: url("./assets/leaf.avif");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.form-container {
-    width: 50px;
-    margin-right: 0;
-    margin-left: auto;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
+.banner-top-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
 }
 
-.signup-form {
-    max-width: 400px;
-    margin: 50px auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.banner-text-wrapper {
+    display: flex;
+    height: 10em;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    align-items: center;
+    justify-content: center;
 }
 
-.form-control {
-    margin-bottom: 10px;
+.odin-image {
+    height: 80%;
+    width: auto;
 }
 
-.form-control label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-control input[type="text"],
-.form-control input[type="email"],
-.form-control input[type="password"],
-.form-control input[type="tel"] {
-    width: 100px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #28a745;
+.banner-text {
+    font-family: "NorseBold";
+    font-size: 6rem;
     color: white;
-    cursor: pointer;
 }
 
-.form-control input[type="Submit"]:hover {
-    background: #218838;
+.banner-bottom-section {
+    flex: 1;
+    display: flex;
+    align-items: end;
+    overflow: auto;
 }
 
-.form-footer {
-    text-align: center;
-    margin-top: 20px;
+.banner-footer-text {
+    color: white;
+    opacity: 80%;
+    margin-bottom: .5em;
+    font-size: .9rem;
+}
+
+
+.content {
+    width: 100%;
+    flex: 5;
+    display: flex;
+    flex-direction: column;
+}
+
+.call {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding-bottom: 3em;
+    padding-left: 3em;
+    width: 100%;
+    background-color: #fcfcfc;
+}
+
+.call-content {
+    width: 90%;
+}
+
+.form {
+    box-shadow: 5px 7px 7px 0 lightgray, 0 -2px 2px 0 rgba(0, 0, 0, .03);
+    z-index: 1;
+    padding: 2em 3em;
+    height: min-content;
+}
+
+.form > h2 {
+    opacity: .8;
+    padding: 0;
+}
+
+.columns {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.grid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas: 
+        "firstname lastname"
+        "email phoneNumber"
+        "password password2";
+    column-gap: 10px;
+}
+
+@media screen and (max-width: 1024px) {
+    .grid {
+        width: 100%;
+    }
+}
+
+.grid-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.firstname { grid-area: firstname; }
+.lastname { grid-area: lastname; }
+.phoneNumber { grid-area: phoneNumber; }
+.email { grid-area: email; }
+.password { grid-area: password; }
+.password2 { grid-area: password2; }
+
+
+label {
+    text-transform: uppercase;
+    font-size: .75rem;
+    font-weight: bold;
+    opacity: .75;
+    letter-spacing: 1px;
+    margin-bottom: .25em;
+    margin-top: 2em;
+}
+
+input {
+    width: 100%;
+    max-width: 250px;
+    background-color: #FCFCFC;
+    font-size: 1rem;
+    padding: .25em;
+    padding-top: .5em;
+    padding-left: 1em;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #E5E7EB;
+    margin-right: 4em;
+    transition: all 300ms;
+}
+
+input:invalid {
+    border: 1px solid rgb(179, 24, 21);
+}
+
+input:active,
+input:focus {
+    background-color: white;
+    border: 1px solid rgb(42, 63, 255);
+    box-shadow: 0 2px 5px 0 lightgray;
+}
+
+input::placeholder {
+    opacity: .5;
+}
+
+.invalid {
+    border: 1px solid rgb(179, 24, 21);
+}
+
+.password-msg {
+    font-size: .75rem;
+    color: rgb(179, 24, 21);
+    opacity: 0;
+    transition: opacity 300ms;
+}
+
+.buttons {
+    flex: 1;
+    background-color: #FCFCFC;
+    padding-top: 3em;
+    padding-left: 3em;
+}
+
+.create-account-btn {
+    background-color: #596D48;
+    color: white;
+    padding: .75em 3em;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.25rem;
+    box-shadow: 0 5px 5px 0 lightgray;
+}
+
+.log-in-txt {
+    margin-top: 3em;
+    font-size: 1.25rem;
+}
+
+a {
+    color: #596D48;
+    font-weight: bold;
+    text-decoration: none;
 }
